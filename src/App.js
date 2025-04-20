@@ -41,8 +41,13 @@ function App() {
           <img src="/logo.png" alt="Logo" className="logo" />
         </div>
         <div className="right-side">
-          <div className="welcome-title">To-Do List'e Hoşgeldiniz
-            <p style={{ fontWeight: 'normal' }}>Yapılacak işlerini kaydet,düzenle ve listele!</p></div>
+          <div className="welcome-title">To-Do List'e Hoşgeldiniz.
+          </div>
+          <div className='welcome-text'>
+            <p>Yapılacak işlerini kaydet,düzenle ve listele!</p>
+            <img src="/icon.png" alt="Icon" width={80} height={80} style={{ marginTop: 10 }}></img>
+          </div>
+
           <img src="/google.png" alt="Google Logo" className="google-logo" />
           <button className="login-button" onClick={handleGoogleLogin}>
             Google ile Giriş Yap
