@@ -15,8 +15,15 @@ function TodoList({
     const [editingDate, setEditingDate] = useState(new Date());
 
     const filteredTodos = todos.filter(todo => {
-        const isPast = new Date(todo.dueDate.seconds * 1000) < new Date();
-        return filter === "active" ? !isPast : isPast;
+        const dueDate = todo.dueDate?.seconds
+            ? new Date(todo.dueDate.seconds * 1000)
+            : new Date();
+        const isPast = dueDate < new Date();
+
+        if (filter === "all") return true;
+        if (filter === "active") return !isPast && !todo.completed;
+        if (filter === "past") return isPast;
+        return true;
     });
 
     const startEditing = (todo) => {

@@ -18,7 +18,7 @@ import { useNavigate } from 'react-router-dom';
 
 function TodoPage() {
     const [todos, setTodos] = useState([]);
-    const [filter, setFilter] = useState("active");
+    const [filter, setFilter] = useState("all");
     const navigate = useNavigate();
 
     useEffect(() => {
